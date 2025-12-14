@@ -1,0 +1,26 @@
+/*
+ * Custom styles for the Personal Profile Web Page
+ */
+
+/* Style for the profile picture */
+.profile-pic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    margin-top: 15px;
+}
+
+/* Styles for the main content sections */
+.about-section,
+.gallery {
+    padding: 20px;
+    border: 1px solid #ddd; /* Example styling for a subtle border */
+    border-radius: 8px; /* Slightly rounded corners for the sections */
+    margin-bottom: 20px;
+}
+
+/* Optional: Improve readability of the iframe content */
+.gallery iframe {
+    display: block; /* Ensures the iframe behaves as a block element */
+    margin: 0 auto; /* Centers the iframe if its width is less than 100% */
+}
