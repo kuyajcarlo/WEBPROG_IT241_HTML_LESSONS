@@ -2,31 +2,64 @@
 <html>
 <head>
     <title>Personal Profile</title>
-<link rel="stylesheet" href="css/rwd.css">
+    <link rel="stylesheet" href="css/rwd.css">
 </head>
 <body> 
-    <h1>My Personal Profile Web page</h1>
-
     
-    <div class="container">
-        <div>About Myself</div>
-        <div>Education, Achievements, & Experience</div>
-        <div>Hobbies, Interests, Goals & Dreams</div>
-        <div>- John Carlo Baracena, BSIT Student</div>
-        <div>- BS Information Technology
-            - IT Experience: JavaScript, Python Programming, SQL</div>
-        <div>- Hobbies: Gaming, Badminton, Cycling
-            - Goal: To become a Successful Entrepreneur</div>
-    </div>
-    
-    <h2>My Gallery</h2>
-    <iframe 
-        src="https://assets.pinterest.com/ext/embed.html?id=2251868558892663" 
-        height="550" 
-        width="450">
-    </iframe>
+    <div class="grid-container">
+        
+        <div class="header">
+            <h1>My Personal Profile Web page - John Carlo Baracena</h1>
+        </div>
+        
+        <div class="menu">
+            <ul>
+                <li>About Myself</li>
+                <li>Education, Achievements, & Experience</li>
+                <li>Hobbies, Interests, Goals & Dreams</li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <h1>About Me</h1>
+            <p>John Carlo Baracena, BSIT Student</p>
+            
+            <h3>Education & Experience</h3>
+            <p>
+                BS Information Technology<br>
+                IT Experience: JavaScript, Python Programming, SQL
+            </p>
+            
+            <h3>Hobbies & Interests</h3>
+            <p>Hobbies: Gaming, Badminton, Cycling</p>
+            
+            <h2>Picture Gallery</h2>
             <img src="Introduction/JPG image/DSC00501.jpg" 
-             alt="John Carlo Baracena" >
+                 alt="John Carlo Baracena">
+            
+            <h2>My Pinterest Gallery</h2>
+            <iframe 
+                src="https://assets.pinterest.com/ext/embed.html?id=2251868558892663" 
+                height="550" 
+                width="450"
+                style="max-width: 100%;">
+            </iframe>
+        </div>
+        
+        <div class="facts">
+            <h2>Goals & Dreams</h2>
+            <ul>
+                <li>To become a Successful Entrepreneur</li>
+                <li>To master full-stack development</li>
+                <li>To create innovative tech solutions</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 John Carlo Baracena - Personal Profile</p>
+        </div>
+        
+    </div>
     
 </body>
 </html>
