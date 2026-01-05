@@ -16,8 +16,8 @@ body {
 .page {
   display: flex;
   min-height: 100vh;
-  padding: 20px;
-  gap: 30px;
+  padding: 30px;
+  gap: 40px;
 }
 
 /* SIDEBAR */
@@ -30,18 +30,19 @@ body {
   text-align: center;
 }
 
-/* FULL IMAGE (NORMAL FORMAT) */
+/* SQUARE PROFILE IMAGE */
 .profile-img {
-  width: 100%;
-  height: auto;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 12px;
-  border: 2px solid #8b0000;
+  border: 3px solid #8b0000;
   margin-bottom: 15px;
 }
 
 .sidebar h2 {
   color: #ff4d4d;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* CONTENT */
@@ -49,7 +50,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 40px;
 }
 
 /* CARDS */
@@ -57,48 +58,49 @@ body {
   background-color: #140000;
   border: 2px solid #8b0000;
   border-radius: 25px;
-  padding: 30px;
+  padding: 35px;
 }
 
 .card h2 {
   color: #ff4d4d;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .card ul {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .card li {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   line-height: 1.6;
 }
 
 /* GALLERY */
 .gallery {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 10px;
 }
 
 .gallery img {
-  width: 220px;
-  height: 140px;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 14px;
-  border: 2px solid #8b0000;
+  border-radius: 15px;
+  border: 3px solid #8b0000;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .page {
     flex-direction: column;
+    align-items: center;
   }
 
   .sidebar {
-    width: 100%;
+    width: 90%;
   }
 
   .gallery {
