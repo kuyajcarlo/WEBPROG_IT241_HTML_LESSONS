@@ -78,7 +78,7 @@ body {
 /* GALLERY */
 .gallery {
   display: flex;
-  gap: 14px;           
+  gap: 5px;           
   flex-wrap: wrap;
   margin-top: 8px;       
 }
