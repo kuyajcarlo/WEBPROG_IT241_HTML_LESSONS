@@ -1,84 +1,100 @@
-/* Reset */
-body {
+/* RESET */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background-color: #fff6f0;
-  color: #333;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
 }
 
-/* Header */
-header {
-  background-color: #ffd6c9;
+/* PAGE LAYOUT */
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background-color: #1a0000;
+  border-right: 4px solid #8b0000;
   text-align: center;
   padding: 20px;
 }
 
-/* Navigation */
-nav {
-  background-color: #ffbfa9;
-  text-align: center;
-  padding: 10px;
+.sidebar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #8b0000;
+  margin-bottom: 10px;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+.sidebar h2 {
+  color: #ff4d4d;
 }
 
-/* Main content */
-main {
-  max-width: 900px;
-  margin: auto;
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* CARDS */
+.card {
+  background-color: #140000;
+  border: 2px solid #8b0000;
+  border-radius: 20px;
   padding: 20px;
+  margin-bottom: 25px;
 }
 
-/* Sections */
-section {
-  background-color: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+.card h2 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
 }
 
-/* Profile Image */
-section img {
-  max-width: 200px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
+.card ul {
+  margin-left: 20px;
 }
 
-/* Skills list */
-ul {
-  list-style-type: square;
-  padding-left: 20px;
+.card li {
+  margin-bottom: 8px;
 }
 
-/* Gallery */
+/* GALLERY */
 .gallery {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .gallery img {
-  width: 200px;
-  border-radius: 6px;
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #8b0000;
 }
 
-/* Footer */
-footer {
-  background-color: #ffd6c9;
-  text-align: center;
-  padding: 10px;
-}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .gallery img {
+  .sidebar {
     width: 100%;
+    border-right: none;
+    border-bottom: 4px solid #8b0000;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
   }
 }
