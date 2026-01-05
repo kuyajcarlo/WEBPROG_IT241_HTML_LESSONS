@@ -1,0 +1,84 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff6f0;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #ffd6c9;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background-color: #ffbfa9;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Sections */
+section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Profile Image */
+section img {
+  max-width: 200px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+/* Skills list */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 6px;
+}
+
+/* Footer */
+footer {
+  background-color: #ffd6c9;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery img {
+    width: 100%;
+  }
+}
