@@ -16,33 +16,33 @@ body {
 .page {
   display: flex;
   min-height: 100vh;
-  padding: 30px;
-  gap: 40px;
+  padding: 18px;        
+  gap: 20px;            
 }
 
 /* SIDEBAR */
 .sidebar {
-  width: 260px;
+  width: 240px;        
   background-color: #160000;
   border: 3px solid #8b0000;
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 16px; 
+  padding: 18px;       
   text-align: center;
 }
 
 /* SQUARE PROFILE IMAGE */
 .profile-img {
-  width: 220px;
-  height: 220px;
+  width: 190px;        
+  height: 190px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px; 
   border: 3px solid #8b0000;
-  margin-bottom: 15px;
+  margin-bottom: 10px; 
 }
 
 .sidebar h2 {
   color: #ff4d4d;
-  margin-top: 12px;
+  margin-top: 8px;      
 }
 
 /* CONTENT */
@@ -50,46 +50,45 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 22px;            
 }
 
 /* CARDS */
 .card {
   background-color: #140000;
   border: 2px solid #8b0000;
-  border-radius: 25px;
-  padding: 35px;
+  border-radius: 18px;  
+  padding: 20px;       
 }
 
 .card h2 {
   color: #ff4d4d;
-  margin-bottom: 18px;
+  margin-bottom: 10px;  
 }
 
 .card ul {
-  margin-left: 30px;
+  margin-left: 20px;   
 }
 
 .card li {
-  margin-bottom: 14px;
-  line-height: 1.6;
+  margin-bottom: 8px;   
+  line-height: 1.5;
 }
 
 /* GALLERY */
 .gallery {
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
+  gap: 14px;           
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 8px;       
 }
 
 .gallery img {
-  width: 280px;
-  height: 280px;
+  width: 190px;        
+  height: 190px;
   object-fit: cover;
-  border-radius: 15px;
-  border: 3px solid #8b0000;
+  border-radius: 10px;  
+  border: 2px solid #8b0000;
 }
 
 /* RESPONSIVE */
@@ -100,7 +99,7 @@ body {
   }
 
   .sidebar {
-    width: 90%;
+    width: 100%;
   }
 
   .gallery {
