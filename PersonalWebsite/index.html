@@ -1,145 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Kuya Carlo | Gamer Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/css.css" />
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container d-flex align-items-center justify-content-between">
-    <div class="logo">
-      <img src="JPG/MyProfile.jpg" alt="logo" class="logo-img">
-      <div class="title-wrap">
-        <h1>CARLO</h1>
-        <span class="subtitle">LEVEL 20 • Web & Game Enthusiast</span>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="#comments">Comments</a>
-    </nav>
-  </div>
-</header>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="gallery.html">Gallery</a>
+</div>
 
-<main class="main-stage">
-  <section class="hero container">
-    <div class="hero-left">
-      <div class="profile-card">
-        <div class="avatar-wrap">
-          <img src="JPG/MyProfile.jpg" alt="MyProfile" class="avatar">
-        </div>
-        <h2>John Carlo E Baracena</h2>
-        <p class="role">Frontend & Game UI Learner</p>
-        <div class="btn-row">
-          <a class="btn btn-neon" href="profile.html">View Profile</a>
-          <a class="btn btn-outline-neon" href="gallery.html">Open Gallery</a>
-        </div>
-        <a class="download" href="JPG/MyProfile.jpg" download="MyProfile.jpg" title="Download profile image">
-          <i class="bi bi-download"></i> Download
-        </a>
-      </div>
-    </div>
+<div class="container">
+  <h1>Welcome to My Website</h1>
 
-    <div class="hero-right">
-      <div class="cards-grid">
-        <div class="stat-card">
-          <h3>About</h3>
-          <p>20 • Aspiring IT Professional • Loves gaming, code and visuals.</p>
-        </div>
-        <div class="stat-card">
-          <h3>Skills</h3>
-          <p>HTML • CSS • Python • SQL • Java (basics)</p>
-        </div>
-        <div class="stat-card">
-          <h3>Projects</h3>
-          <p>Reservation app • Small game UI prototypes</p>
-        </div>
-        <div class="stat-card">
-          <h3>Contact</h3>
-          <p>johncarlobaracena@gmail.com</p>
-        </div>
-      </div>
+  <img src="MyProfile.jpg" class="profile-pic">
 
-      <div class="gallery-card">
-        <img src="JPG/MyProfile.jpg" alt="gallery" />
-        <a href="gallery.html" class="overlay-link">Enter Gallery</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="comments-section container" id="comments">
-    <div class="comments-left">
-      <h3>Leave a comment</h3>
-      <form id="commentForm" class="comment-form">
-        <input id="name" type="text" placeholder="Name" required>
-        <textarea id="message" rows="3" placeholder="Write your message..." required></textarea>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-neon">Post</button>
-          <button id="clearComments" type="button" class="btn btn-outline-neon">Clear All</button>
-        </div>
-      </form>
-    </div>
-    <div class="comments-right">
-      <h3>Recent Comments</h3>
-      <ul id="commentList" class="comment-list"></ul>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div>© 2026 Carlo — Gamer Theme Portfolio</div>
-    <div class="footer-links">
-      <a href="Resources.html">Resources</a>
-      <a href="mailto:johncarlobaracena@gmail.com"><i class="bi bi-envelope-fill"></i></a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const form = document.getElementById('commentForm');
-  const commentList = document.getElementById('commentList');
-  const clearBtn = document.getElementById('clearComments');
-
-  function loadComments() {
-    const items = JSON.parse(localStorage.getItem('comments') || '[]');
-    commentList.innerHTML = items.map(c => {
-      const time = new Date(c.ts).toLocaleString();
-      return '<li><strong>' + escapeHtml(c.name) + '</strong> <span class="time">· ' + time + '</span><div>' + escapeHtml(c.msg) + '</div></li>';
-    }).join('');
-  }
-  function escapeHtml(s) { return s.replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const msg = document.getElementById('message').value.trim();
-    if(!name || !msg) return;
-    const existing = JSON.parse(localStorage.getItem('comments') || '[]');
-    existing.unshift({name, msg, ts: Date.now()});
-    localStorage.setItem('comments', JSON.stringify(existing.slice(0,50)));
-    form.reset();
-    loadComments();
-  });
-
-  clearBtn.addEventListener('click', () => {
-    if(confirm('Clear all comments?')) {
-      localStorage.removeItem('comments');
-      loadComments();
-    }
-  });
-
-  loadComments();
-</script>
+  <p>
+    Hi! I’m Carlo. This is my simple personal website created using HTML and CSS.
+  </p>
+</div>
 
 </body>
 </html>
