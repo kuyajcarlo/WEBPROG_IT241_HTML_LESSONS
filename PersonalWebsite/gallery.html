@@ -1,28 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Gallery</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery | John Carlo E Baracena</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/css.css">
 </head>
+<body class="gallery-page">
+    <!-- Home Button -->
+    <a href="index.html" class="home-fab" title="Back to Home">
+        <i class="bi bi-house-door-fill"></i>
+    </a>
 
-<body>
+    <div class="container gallery-wrap">
+        <h1 class="gallery-title">MY GALLERY</h1>
 
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="profile.html">Profile</a>
-  <a href="gallery.html">Gallery</a>
-</div>
+        <!-- Gallery Controls/Filters -->
+        <div class="gallery-controls">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="me">Me</button>
+            <button class="filter-btn" data-filter="friends">Family & Friends</button>
+            <button class="filter-btn" data-filter="random">Random</button>
+        </div>
 
-<div class="container">
-  <h1>My Gallery</h1>
+        <!-- Photo Grid -->
+        <div class="photo-grid" id="photoGrid">
+            <!-- Me Category -->
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 1">
+            </div>
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 2">
+            </div>
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 3">
+            </div>
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 4">
+            </div>
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 5">
+            </div>
+            <div class="photo-card" data-cat="me">
+                <img src="JPG/MyProfile.jpg" alt="My Profile Photo 6">
+            </div>
 
-  <div class="gallery">
-    <img src="MyProfile.jpg">
-    <img src="MyProfile.jpg">
-    <img src="MyProfile.jpg">
-    <img src="MyProfile.jpg">
-  </div>
-</div>
+            <!-- Friends Category -->
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 1">
+            </div>
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 2">
+            </div>
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 3">
+            </div>
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 4">
+            </div>
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 5">
+            </div>
+            <div class="photo-card" data-cat="friends">
+                <img src="JPG/MyProfile.jpg" alt="Friends Photo 6">
+            </div>
 
+            <!-- Random Category -->
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 1">
+            </div>
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 2">
+            </div>
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 3">
+            </div>
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 4">
+            </div>
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 5">
+            </div>
+            <div class="photo-card" data-cat="random">
+                <img src="JPG/MyProfile.jpg" alt="Random Photo 6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal for Lightbox -->
+    <div id="imgModal" class="img-modal">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <button class="modal-nav modal-prev" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <img id="modalImg" src="" alt="Gallery Image">
+        <button class="modal-nav modal-next" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Gallery JavaScript -->
+    <script>
+        // Get all photo cards and modal elements
+        const photoCards = Array.from(document.querySelectorAll('.photo-card'));
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeBtn = modal.querySelector('.modal-close');
+        const nextBtn = modal.querySelector('.modal-next');
+        const prevBtn = modal.querySelector('.modal-prev');
+        let currentIndex = 0;
+        let visibleCards = photoCards;
+
+        // Open modal function
+        function openModal(index) {
+            currentIndex = index;
+            const imgSrc = visibleCards[index].querySelector('img').src;
+            modalImg.src = imgSrc;
+            modal.classList.add('open');
+        }
+
+        // Close modal function
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        // Next image function
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % visibleCards.length;
+            openModal(currentIndex);
+        }
+
+        // Previous image function
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + visibleCards.length) % visibleCards.length;
+            openModal(currentIndex);
+        }
+
+        // Add click event to each photo card
+        photoCards.forEach((card, index) => {
+            card.addEventListener('click', function() {
+                // Update visible cards based on current filter
+                visibleCards = Array.from(document.querySelectorAll('.photo-card')).filter(c => c.style.display !== 'none');
+                const cardIndex = visibleCards.indexOf(card);
+                openModal(cardIndex);
+            });
+        });
+
+        // Close button click event
+        closeBtn.addEventListener('click', closeModal);
+
+        // Next button click event
+        nextBtn.addEventListener('click', showNextImage);
+
+        // Previous button click event
+        prevBtn.addEventListener('click', showPrevImage);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!modal.classList.contains('open')) return;
+
+            if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Click outside modal to close
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter photo cards
+                photoCards.forEach(card => {
+                    const category = card.getAttribute('data-cat');
+                    
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update visible cards array
+                visibleCards = Array.from(document.querySelectorAll('.photo-card')).filter(c => c.style.display !== 'none');
+            });
+        });
+    </script>
 </body>
 </html>
