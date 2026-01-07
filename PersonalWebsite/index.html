@@ -1,27 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Personal Website</title>
-  <link rel="stylesheet" href="css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Carlo E Baracena | Gamer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/css.css">
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="JPG/MyProfile.jpg" alt="Logo" class="nav-logo">
+                <span class="brand-text">CARLO</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">My Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comments">Comments</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="profile.html">Profile</a>
-  <a href="gallery.html">Gallery</a>
-</div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="profile-card">
+                        <div class="profile-image-wrapper">
+                            <img src="JPG/MyProfile.jpg" alt="John Carlo E Baracena" class="profile-image">
+                            <div class="level-badge">LVL 20</div>
+                        </div>
+                        <h1 class="profile-name">John Carlo E Baracena</h1>
+                        <p class="profile-title">Web Developer & Gaming Enthusiast</p>
+                        <div class="button-group">
+                            <a href="profile.html" class="btn btn-primary">View Profile</a>
+                            <a href="gallery.html" class="btn btn-secondary">Gallery</a>
+                        </div>
+                        <a href="JPG/MyProfile.jpg" download="MyProfile.jpg" class="download-link">
+                            <i class="bi bi-download"></i> Download Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                            <h3>About</h3>
+                            <p>20 years old aspiring IT professional who loves gaming, coding, and visual design.</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h3>Skills</h3>
+                            <p>HTML, CSS, Python, SQL, Java</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="bi bi-folder"></i>
+                            </div>
+                            <h3>Projects</h3>
+                            <p>Reservation app, Game UI prototypes</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h3>Contact</h3>
+                            <p>johncarlobaracena@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-preview" onclick="window.location.href='gallery.html'">
+                        <img src="JPG/MyProfile.jpg" alt="Gallery Preview">
+                        <div class="gallery-overlay">
+                            <span>View Gallery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="container">
-  <h1>Welcome to My Website</h1>
+    <!-- Comments Section -->
+    <section class="comments-section" id="comments">
+        <div class="container">
+            <h2 class="section-title">Leave a Comment</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form id="commentForm" class="comment-form">
+                        <div class="mb-3">
+                            <input type="text" id="nameInput" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea id="messageInput" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+                        </div>
+                        <div class="button-group-form">
+                            <button type="submit" class="btn btn-primary">Post Comment</button>
+                            <button type="button" id="clearBtn" class="btn btn-danger">Clear All</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="comment-list-title">Recent Comments</h3>
+                    <div id="commentList" class="comment-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <img src="MyProfile.jpg" class="profile-pic">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 John Carlo E Baracena - Gamer Portfolio</p>
+                <div class="footer-links">
+                    <a href="resources.html">Resources</a>
+                    <a href="mailto:johncarlobaracena@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <p>
-    Hi! I’m Carlo. This is my simple personal website created using HTML and CSS.
-  </p>
-</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Comment System Script -->
+    <script>
+        // Get elements
+        const commentForm = document.getElementById('commentForm');
+        const commentList = document.getElementById('commentList');
+        const clearBtn = document.getElementById('clearBtn');
+        const nameInput = document.getElementById('nameInput');
+        const messageInput = document.getElementById('messageInput');
 
+        // Load comments when page loads
+        window.addEventListener('load', loadComments);
+
+        // Handle form submission
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+            
+            if (name && message) {
+                addComment(name, message);
+                nameInput.value = '';
+                messageInput.value = '';
+            }
+        });
+
+        // Clear all comments
+        clearBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear all comments?')) {
+                const comments = [];
+                saveComments(comments);
+                loadComments();
+            }
+        });
+
+        // Add comment function
+        function addComment(name, message) {
+            const comments = getComments();
+            const newComment = {
+                name: name,
+                message: message,
+                timestamp: new Date().toLocaleString()
+            };
+            comments.unshift(newComment);
+            saveComments(comments);
+            loadComments();
+        }
+
+        // Get comments from storage
+        function getComments() {
+            const comments = JSON.parse(window.localStorage.getItem('comments') || '[]');
+            return comments;
+        }
+
+        // Save comments to storage
+        function saveComments(comments) {
+            window.localStorage.setItem('comments', JSON.stringify(comments));
+        }
+
+        // Load and display comments
+        function loadComments() {
+            const comments = getComments();
+            
+            if (comments.length === 0) {
+                commentList.innerHTML = '<p class="no-comments">No comments yet. Be the first to comment!</p>';
+                return;
+            }
+            
+            commentList.innerHTML = '';
+            comments.forEach(function(comment) {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment-item';
+                commentDiv.innerHTML = `
+                    <div class="comment-header">
+                        <strong>${escapeHtml(comment.name)}</strong>
+                        <span class="comment-time">${comment.timestamp}</span>
+                    </div>
+                    <div class="comment-body">${escapeHtml(comment.message)}</div>
+                `;
+                commentList.appendChild(commentDiv);
+            });
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
 </body>
 </html>
